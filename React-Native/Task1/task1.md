@@ -1,3 +1,12 @@
+# Task 1
+
+React Native library implementing Azure AD OAuth2 API
+
+The library uses the latest __V2.0__ version of the [Azure AD endponts](https://docs.microsoft.com/en-us/azure/active-directory/develop/active-directory-v2-compare) and provides token cache functionality.
+`react-native-azure-auth` implements authentication flow using `fetch` API and native components.
+The OpenID connect and `authorization_code` grant are implemented.
+
+
 ```js
     try {
         // Try to get cached token or refresh an expired ones
