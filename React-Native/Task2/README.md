@@ -2,11 +2,11 @@
 
 Build a Simple UI for the To-Do app
 
-Objective: Practise using core components and custom components to build a simple UI.\
+Objective: Practise using core components and custom components to build a simple UI.
 
 > Some steps i will go into details and make the code for you and others you have to make it yourself.
 
-## Step 1: Building the UI
+## Step 1: Building the basic UI
 For a simple To-Do app we will need a header, input field, button and a list of tasks.\
 In this step we wont be using custom components or a FlatList component.\
 In the begining i will be explaining step by step whats going on, until you get more and more familiere with the basic components and styles.
@@ -17,6 +17,7 @@ In the begining i will be explaining step by step whats going on, until you get 
 
 > Check the source folder of this task to see the complete and finale code, but firstly try to follow the below steps the best you can.
 
+---
 ### Step 1.1: Header
 Lets make our header.\
 Remember to put all the components that we add from now on in the SafeAreaView:
@@ -45,6 +46,7 @@ For the styles we use inline-styling now, for both components View and Text:
 
 So, this code creates a purple box with centered, large, bold, white text that says "To-Do App".
 
+---
 ### Step 1.2: "Add task" area
 Next we will be adding a input field and a button for the part to add new tasks.
 Put this code after our header code.
@@ -72,11 +74,12 @@ For the styles:
 - The **TextInpu**t is stretched to take most of the space, with a white background, rounded corners, and padding inside.
 - The **Button** displays "Add" and logs a message to the console when clicked.
 
-
+---
 ### Step 1.3: Simple seperator (Your turn!)
 - Use a View component
 - Style the View component with a height and a background color same as the header
 
+---
 ### Step 1.4: The Task list (Your turn!)
 In the beginning we will start very simple, lets start by making the Task item.
 - Make a "parent" view for the Task item
@@ -86,7 +89,24 @@ In the beginning we will start very simple, lets start by making the Task item.
     - You decide what Text will be in the Text component, it doesn't really matter at this point.
 - In the parent view add a Button component into parent View
     - Add the title prop with the string "Done"
-- C/P the whole Task item a couple of times
-- Wrap all the Task item you just made in a ScrollView
+- C/P the whole **Task item** a couple of times
+- Wrap all the **Task items** you just made in a **ScrollView**
 - Give the ScrollView a style **flex: 1** so it fills the rest of the screen.
+
+---
+### Extra
+Feel free to play around and style the components as you see fit.
+
+---
+### Ending notes
+**Your code base should look something like this:**
+[Step 1 sourcecode](https://github.com/fak1337/pentia_mobile_learning_tasks/blob/main/React-Native/Task2/step1_src/App.tsx)
+
+
+## Step 2: Stylesheet
+
+Lets take a look at how we can make the styling a little prettier.
+Inline styling as we are using right now is just ugly can make the code clutter, we dont want that.
+
+In our App.tsx files we have a **style object** called **styles** and as you can see, our SafeAreaView has a style that referes to that style object. Now lets use that in all our components.
 
