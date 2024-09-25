@@ -1,4 +1,4 @@
-# Task 2
+# Task 2: Components (and styling)
 
 Build a Simple UI for the To-Do app
 
@@ -15,7 +15,9 @@ In the begining i will be explaining step by step whats going on, until you get 
 
 ![Simple TO-DO app UI](https://i.ibb.co/Sd2dLGm/Simulator-Screenshot-i-Phone-15-2024-09-25-at-09-44-41.png)
 
-### Header
+> Check the source folder of this task to see the complete and finale code, but firstly try to follow the below steps the best you can.
+
+### Step 1.1: Header
 Lets make our header.\
 Remember to put all the components that we add from now on in the SafeAreaView:
 ```js
@@ -43,7 +45,7 @@ For the styles we use inline-styling now, for both components View and Text:
 
 So, this code creates a purple box with centered, large, bold, white text that says "To-Do App".
 
-### Add task area
+### Step 1.2: "Add task" area
 Next we will be adding a input field and a button for the part to add new tasks.
 Put this code after our header code.
 ```js
@@ -59,20 +61,32 @@ Put this code after our header code.
 **code explained:**\
 This code creates a row with a text input and an "Add" button.
 
-The View is like a container that holds the text input and button side by side. The TextInput is where you can type a new task. The Button next to it lets you add the task when pressed.
+- The **View** is like a container that holds the text input and button side by side.
+- The **TextInput** is where you can type a new task.
+- The **Button** next to it lets you add the task when pressed.
 
 For the styles:
 
 - **flexDirection** makes the text input and button sit next to each other in a row.
 - **margin** adds space around the container.
-- The **TextInp**ut is stretched to take most of the space, with a white background, rounded corners, and padding inside.
+- The **TextInpu**t is stretched to take most of the space, with a white background, rounded corners, and padding inside.
 - The **Button** displays "Add" and logs a message to the console when clicked.
 
 
-### Simple seperator (Your turn!)
+### Step 1.3: Simple seperator (Your turn!)
 - Use a View component
-- Style the View component with a height and a backgroundcolor same as the header
+- Style the View component with a height and a background color same as the header
 
+### Step 1.4: The Task list (Your turn!)
+In the beginning we will start very simple, lets start by making the Task item.
+- Make a "parent" view for the Task item
+    - Give the parent view whatever styling you want but be sure to add **flexDirection: 'row'**
+    - The **flexDirection: 'row'** will align all child components in a horizontal row 
+- In the parent view add a View component that wraps a Text component
+    - You decide what Text will be in the Text component, it doesn't really matter at this point.
+- In the parent view add a Button component into parent View
+    - Add the title prop with the string "Done"
+- C/P the whole Task item a couple of times
+- Wrap all the Task item you just made in a ScrollView
+- Give the ScrollView a style **flex: 1** so it fills the rest of the screen.
 
-
-Check the source folder of this task to see the complete and finale code, but try to make it yourself first.
