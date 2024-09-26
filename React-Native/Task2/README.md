@@ -237,12 +237,13 @@ const { title } = props
 <ScrollView style={styles.tasksContainer} >
     <TaskItem title={"Do 20 push-ups"} />
     <TaskItem title={"Remember my meds"}/>
-    <TaskItem title={"Medition 10min"}/>
+    <TaskItem title={"Meditation 10min"}/>
     <TaskItem title={"Eat cake"}/>
     <TaskItem title={"Be awesome today"}/>
 </ScrollView >
 ```
 
+---
 **Check out the finale result for step 3:**\
 [Step 3 App.tsx](https://github.com/fak1337/pentia_mobile_learning_tasks/blob/main/React-Native/Task2/step3_src/App.tsx)\
 [Step 3 TaskItems.tsx](https://github.com/fak1337/pentia_mobile_learning_tasks/blob/main/React-Native/Task2/step3_src/components/TaskItem.tsx)

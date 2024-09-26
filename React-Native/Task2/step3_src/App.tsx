@@ -32,7 +32,7 @@ const App = () => {
         {/* Task item */}
         <TaskItem title={"Do 20 push-ups"} />
         <TaskItem title={"Remember my meds"}/>
-        <TaskItem title={"Medition 10min"}/>
+        <TaskItem title={"Meditation 10min"}/>
         <TaskItem title={"Eat cake"}/>
         <TaskItem title={"Be awesome today"}/>
 
