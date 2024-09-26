@@ -105,8 +105,52 @@ Feel free to play around and style the components as you see fit.
 
 ## Step 2: Stylesheet
 
-Lets take a look at how we can make the styling a little prettier.
-Inline styling as we are using right now is just ugly can make the code clutter, we dont want that.
+Lets take a look at how we can make the styling code a little prettier.
+Inline styling as we are using right now is just ugly and can make the code clutter.
+Rule of thumb is that if your inline styling has 3 or more styles in it, put it in a stylesheet.
 
-In our App.tsx files we have a **style object** called **styles** and as you can see, our SafeAreaView has a style that referes to that style object. Now lets use that in all our components.
+In our App.tsx files we have a **style object** called **styles** and as you can see our SafeAreaView has a style that referes to that style object. Now lets use that in all our components.
+
+This is how you can make the Header area code more "compact" and awesome, by removing the inline styling and putting it in the StyleSheet.create.
+
+The Header views:
+```js
+<View style={styles.headerContainer}>
+    <Text style={styles.headerText}>To-Do App</Text>
+</View>
+```
+
+The style object:
+```js
+const styles = StyleSheet.create({
+    background: {
+        backgroundColor: "#3b3b3b",
+        flex: 1,
+    },
+    headerContainer: {
+        padding: 20,
+        backgroundColor: '#6200ee',
+        alignItems: 'center',
+        marginBottom: 10,
+    },
+    headerText: { 
+        fontSize: 24, 
+        color: '#fff', 
+        fontWeight: 'bold'
+    }
+});
+```
+
+Your tasks are as follows, clean up the styling code like above for the:
+- Header area
+- "Add task" area
+- Seperator
+- Task list (Scrollview)
+- Task items
+
+---
+### Ending notes
+**Your code base should look something like this:**
+[Step 2 sourcecode](https://github.com/fak1337/pentia_mobile_learning_tasks/blob/main/React-Native/Task2/step2_src/App.tsx)
+
 
