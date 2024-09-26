@@ -26,6 +26,12 @@ Remember to put all the components that we add from now on in the SafeAreaView:
     PUT EVERYTHING HERE FOR NOW
 </SafeAreaView>
 ```
+
+**NOTE: When adding components to your code there will be a redline under it, just add the correct imports at top of your file, like this:**
+```js
+import { /** ...Other imports*/ Text, View } from "react-native"
+```
+
 Our header code
 ```js
 <View style={{padding: 20,backgroundColor: '#6200ee',alignItems: 'center',marginBottom: 10,}} >
@@ -102,6 +108,7 @@ Feel free to play around and style the components as you see fit.
 **Your code base should look something like this:**
 [Step 1 sourcecode](https://github.com/fak1337/pentia_mobile_learning_tasks/blob/main/React-Native/Task2/step1_src/App.tsx)
 
+---
 
 ## Step 2: Stylesheet
 
@@ -149,8 +156,51 @@ Your tasks are as follows, clean up the styling code like above for the:
 - Task items
 
 ---
-### Ending notes
 **Your code base should look something like this:**
 [Step 2 sourcecode](https://github.com/fak1337/pentia_mobile_learning_tasks/blob/main/React-Native/Task2/step2_src/App.tsx)
 
+
+---
+
+## Step 3: Custom components
+Time to make our first custom component. Lets get into it straight away!
+
+### Step 3.1: Project structur
+
+Firstly lets make some changes to our project structur
+
+- Make a new Folder in the main project folder: **components**
+    - This is the folder that vil contain all the custom components
+- Make a new file in the **components** folder: **TaskItem.tsx**
+    - This is the custom component file for the Task Items
+
+### Step 3.2: The custom component
+
+So if you look at our source code in the App.tsx, specially where the task items are, its just c/p and if we had 100 of task items, the code base will be VERY LONG.
+There are of course lots of ways to do the listing code, but i just want to give you a very basic understanding of custom components and how we can minimize our code.
+
+Go ahead and open the file **TaskItem.tsx** and add the following code:
+
+```js
+export const TaskItem = (props) => {
+    /** This is where the components logic will be */
+    return (
+        /** This is where the components views will be */
+    )
+}
+
+const styles = StyleSheet.create({
+   /** This is where the components styles will be */
+})
+```
+**code explained:**
+- **TaskItem:** Its a functional component called TaskItem. It accepts props, which is how data can be passed into the component from a parent.
+- **return (...)** Inside this part, you will define what the visual structure (views) of your component looks like using JSX (e.g., <View>, <Text>, etc.).
+
+It's currently just a skeleton, waiting for logic, views, and styles to be filled in.
+
+**Your task is now to fill in the blanks in our "skeleton" component file:**
+- Go back into the App.tsx file
+- Simply c/p a single set of Task item components into the new component file's return (...)
+- Take all the related styles and put into the StyleSheet.create.
 
