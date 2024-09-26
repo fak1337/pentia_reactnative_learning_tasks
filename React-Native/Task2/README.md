@@ -201,6 +201,46 @@ It's currently just a skeleton, waiting for logic, views, and styles to be fille
 
 **Your task is now to fill in the blanks in our "skeleton" component file:**
 - Go back into the App.tsx file
-- Simply c/p a single set of Task item components into the new component file's return (...)
-- Take all the related styles and put into the StyleSheet.create.
+- Simply c/p a single set of **Task item** components into the new component file's return (...)
+- Take all the **Task Item** related styles from **App.tsx** and put them into the **StyleSheet.create** of new component file.
+- Lastly delete all **Task Item** related views and styles from App.tsx, keep the **ScrollView** for now.
 
+You should end up somethink like this: [Step 3 TaskItem.tsx](https://github.com/fak1337/pentia_mobile_learning_tasks/blob/main/React-Native/Task2/step3_src/components/TaskItem.tsx)
+
+**Well done! Time to use the custom component in our App.tsx**
+- Start by importing the new component, add this line after the other imports at the top of App.tsx: 
+```js
+import { TaskItem } from './components/TaskItem';
+```
+- In the ScrollView add our new component, add as many as you like and see the result
+```js
+<ScrollView style={styles.tasksContainer} >
+    <TaskItem />
+    <TaskItem />
+    <TaskItem />
+    <TaskItem />
+    <TaskItem />
+</ScrollView >
+```
+**Lets make our new component dynamic**\
+As of now the component is pretty "dumb", the text is the same on all the TaskItems added, lets play around with another basic concept of react, **props**.
+
+We will add a simple string **prop** to our **TaskItem** component:
+- In the **components/TaskItem.tsx** add the following line before the **return (...)**
+```js
+const { title } = props
+```
+- Remove the hardcoded text in the **Text** component and replace it with this:
+```js
+{title}
+```
+- Go back to the App.tsx file and add the new prop to **TaskItems**
+```js
+<ScrollView style={styles.tasksContainer} >
+    <TaskItem title={"Do 20 push-ups"} />
+    <TaskItem title={"Remember my meds"}/>
+    <TaskItem title={"Medition 10min"}/>
+    <TaskItem title={"Eat cake"}/>
+    <TaskItem title={"Be awesome today"}/>
+</ScrollView >
+```

@@ -2,10 +2,13 @@ import React from 'react';
 import { Button, StyleSheet, Text, View } from "react-native"
 
 export const TaskItem = (props) => {
+
+    const { title } = props
+
     return (
         <View style={styles.task}>
             <View style={styles.taskTextContainer}>
-                <Text style={styles.taskText}>Another task to complete</Text>
+                <Text style={styles.taskText}>{title}</Text>
             </View>
             <Button title="Done" onPress={() => { }} />
         </View>
