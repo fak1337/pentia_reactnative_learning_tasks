@@ -104,7 +104,6 @@ In the beginning we will start very simple, lets start by making the Task item.
 Feel free to play around and style the components as you see fit.
 
 ---
-### Ending notes
 **Your code base should look something like this:**
 [Step 1 sourcecode](https://github.com/fak1337/pentia_mobile_learning_tasks/blob/main/React-Native/Task2/step1_src/App.tsx)
 
@@ -247,3 +246,7 @@ const { title } = props
 **Check out the finale result for step 3:**\
 [Step 3 App.tsx](https://github.com/fak1337/pentia_mobile_learning_tasks/blob/main/React-Native/Task2/step3_src/App.tsx)\
 [Step 3 TaskItems.tsx](https://github.com/fak1337/pentia_mobile_learning_tasks/blob/main/React-Native/Task2/step3_src/components/TaskItem.tsx)
+
+---
+
+# End of task 2
