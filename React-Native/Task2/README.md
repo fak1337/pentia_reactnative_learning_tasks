@@ -205,8 +205,6 @@ It's currently just a skeleton, waiting for logic, views, and styles to be fille
 - Take all the **Task Item** related styles from **App.tsx** and put them into the **StyleSheet.create** of new component file.
 - Lastly delete all **Task Item** related views and styles from App.tsx, keep the **ScrollView** for now.
 
-You should end up somethink like this: [Step 3 TaskItem.tsx](https://github.com/fak1337/pentia_mobile_learning_tasks/blob/main/React-Native/Task2/step3_src/components/TaskItem.tsx)
-
 **Well done! Time to use the custom component in our App.tsx**
 - Start by importing the new component, add this line after the other imports at the top of App.tsx: 
 ```js
@@ -244,3 +242,7 @@ const { title } = props
     <TaskItem title={"Be awesome today"}/>
 </ScrollView >
 ```
+
+**Check out the finale result for step 3:**\
+[Step 3 App.tsx](https://github.com/fak1337/pentia_mobile_learning_tasks/blob/main/React-Native/Task2/step3_src/App.tsx)\
+[Step 3 TaskItems.tsx](https://github.com/fak1337/pentia_mobile_learning_tasks/blob/main/React-Native/Task2/step3_src/components/TaskItem.tsx)
