@@ -3,14 +3,14 @@ import { Button, StyleSheet, Text, View } from "react-native"
 
 export const TaskItem = (props) => {
 
-    const { title } = props
+    const { title, onPress } = props
 
     return (
         <View style={styles.task}>
             <View style={styles.taskTextContainer}>
                 <Text style={styles.taskText}>{title}</Text>
             </View>
-            <Button title="Done" onPress={() => { }} />
+            <Button title={"Done"} onPress={onPress} />
         </View>
     )
 }

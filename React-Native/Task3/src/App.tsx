@@ -1,9 +1,12 @@
-import React from 'react';
-import { Text, View, TextInput, Button, ScrollView, StyleSheet, SafeAreaView } from 'react-native';
+import React, { useState } from 'react';
+import { Text, View, TextInput, Button, ScrollView, StyleSheet, SafeAreaView, FlatList } from 'react-native';
 import { TaskItem } from './components/TaskItem';
 
-
 const App = () => {
+
+  const [tasks, setTasks] = useState<string[]>([]);
+  const [newTask, setNewTask] = useState<string>('');
+
   return (
     <SafeAreaView style={styles.background}>
       {/* Header */}
@@ -14,12 +17,15 @@ const App = () => {
       {/* Input field */}
       <View style={styles.inputContainer} >
         <TextInput
+          value={newTask}
           style={styles.input}
           placeholder="Enter a new task..."
           placeholderTextColor="#aaa"
+          onChangeText={text => setNewTask(text)}
         />
         <Button title="Add" onPress={() => {
-          console.log('Add button pressed')
+          setTasks([...tasks, newTask]);
+          setNewTask('');
         }} />
       </View >
 
@@ -27,16 +33,20 @@ const App = () => {
       <View style={styles.seperator} />
 
       {/* Task List */}
-      <ScrollView style={styles.tasksContainer} >
+      {
+        tasks.length === 0 ? (
+          <Text style={styles.errorNoTasks}>No tasks available</Text>
+        ) : (
+          <FlatList
+            style={styles.tasksContainer}
+            data={tasks}
+            renderItem={({ item }) => <TaskItem title={item} onPress={() => {
+              setTasks(tasks.filter(task => task !== item));
+            }} />}
+          />
+        )
+      }
 
-        {/* Task item */}
-        <TaskItem title={"Do 20 push-ups"} />
-        <TaskItem title={"Remember my meds"}/>
-        <TaskItem title={"Meditation 10min"}/>
-        <TaskItem title={"Eat cake"}/>
-        <TaskItem title={"Be awesome today"}/>
-
-      </ScrollView >
     </SafeAreaView>
   )
 }
@@ -76,7 +86,12 @@ const styles = StyleSheet.create({
   tasksContainer: {
     paddingTop: 10,
   },
- 
+  errorNoTasks: {
+    color: '#fff',
+    fontSize: 16,
+    textAlign: 'center',
+    marginTop: 20
+  }
 });
 
 export default App;

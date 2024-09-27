@@ -10,20 +10,20 @@ Objective: Learn how to use the useState hook and see “state management” in 
 <br/>
 
 ## Step 1: Add State to store tasks
-Use React's useState hook to store and display tasks dynamically.
+Use React's **useState** hook to store and display tasks dynamically.
 
-- Replace the hardcoded tasks in the app with a state variable.
-- Initialize an empty array of tasks using useState.
-- Display the tasks from the state instead of hardcoded values and components in ScrollView.
+- Initialize an empty array of tasks using **useState**.
+- Display the tasks from the state instead of the hardcoded values and components in **ScrollView**.
+- Use **Flatlist** instead of **ScrollView**
 
 Hint:
 ```js
-const [tasks, setTasks] = useState([]); 
+const [tasks, setTasks] = useState<string[]>([]); 
 ```
 ---
 <br/>
 
-## Step 2: Add State to store tasks
+## Step 2: Add State to store new task
 Implement functionality to add new tasks using the input field and update the state.
 
 - Capture the text from the TextInput using another state variable.
@@ -32,7 +32,7 @@ Implement functionality to add new tasks using the input field and update the st
 
 Hint:
 ```js
-const [newTask, setNewTask] = useState('');
+const [newTask, setNewTask] = useState<string>('');
 ```
 Use setTasks([...tasks, newTask]) in the button’s onPress function.
 
@@ -46,7 +46,7 @@ Clear the input field after the user adds a new task.
 
 Hint:
 ```js
-const [newTask, setNewTask] = useState('');
+setNewTask(''); 
 ```
 
 ---
@@ -56,7 +56,7 @@ const [newTask, setNewTask] = useState('');
 Implement the "Done" button for each task to remove the task from the list.
 
 - Modify the TaskItem component to accept a function that removes a task when the "Done" button is pressed.
-- Pass a function to TaskItem from the App component that removes the corresponding task from the state.
+- Pass a function as prop to TaskItem from the App component that removes the corresponding task from the state.
 
 Hint: Use filter to remove the task:
 ```js
@@ -69,14 +69,22 @@ setTasks(tasks.filter(task => task !== title));
 ## Step 5: Show a message when no tasks are available
 Display a message like "No tasks available" when the task list is empty.
 
-- If the tasks state is an empty array, show a Text component with a message.
+- If the tasks state is an empty array, show a **Text** component with a message instead of the **Flatlist**.
+- Style the message so its centered, has top margin and its easy to spot.
 
 Hint:
 ```js
-{tasks.length === 0 && <Text>No tasks available</Text>}
+{
+    tasks.length === 0 ? (
+        /** Show message */
+    ) : (
+        /** List tasks */
+    )
+}
 ```
-
 ---
+<br/>
+
 **Check out the finale result for Task 3:**\
 [Task 3 App.tsx](https://github.com/fak1337/pentia_mobile_learning_tasks/blob/main/React-Native/Task3/src/App.tsx)\
 [Task 3 TaskItems.tsx](https://github.com/fak1337/pentia_mobile_learning_tasks/blob/main/React-Native/Task3/src/components/TaskItem.tsx)
