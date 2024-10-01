@@ -1,11 +1,37 @@
-import React, { useState } from 'react';
-import { Text, View, TextInput, Button, ScrollView, StyleSheet, SafeAreaView, FlatList } from 'react-native';
+import React, { useEffect, useState } from 'react';
+import { Text, View, TextInput, Button, StyleSheet, SafeAreaView, FlatList } from 'react-native';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import { TaskItem } from './components/TaskItem';
 
 const App = () => {
 
   const [tasks, setTasks] = useState<string[]>([]);
   const [newTask, setNewTask] = useState<string>('');
+
+  /* Load tasks from storage */
+  useEffect(() => {
+    const loadTasks = async () => {
+      const storedTasks = await AsyncStorage.getItem('tasks');
+      if (storedTasks) {
+        setTasks(JSON.parse(storedTasks));
+      }
+    };
+    loadTasks();
+  }, []);
+
+  /* Save tasks to storage */
+  useEffect(() => {
+    const saveTasks = async () => {
+      await AsyncStorage.setItem('tasks', JSON.stringify(tasks));
+    };
+    saveTasks();
+  }, [tasks]);
+
+  /* Clear all tasks */
+  const clearTasks = async () => {
+    setTasks([]);
+  };
+
 
   return (
     <SafeAreaView style={styles.background}>
@@ -44,6 +70,13 @@ const App = () => {
               setTasks(tasks.filter(task => task !== item));
             }} />}
           />
+        )
+      }
+
+      {/* Clear Button */}
+      {
+        tasks.length > 0 && (
+          <Button title="Clear All Tasks" onPress={clearTasks} />
         )
       }
 
