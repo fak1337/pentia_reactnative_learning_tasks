@@ -177,8 +177,6 @@ export const TaskProvider = ({ children }) => {
 };
 ```
 
----
-
 Check out the finale result for our context file:
 [contexts/tasks.context.tsx](https://github.com/fak1337/pentia_mobile_learning_tasks/blob/main/React-Native/Task4/step5_src/contexts/tasks.context.tsx)
 
