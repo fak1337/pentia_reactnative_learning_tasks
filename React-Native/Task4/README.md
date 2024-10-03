@@ -181,8 +181,53 @@ Check out the finale result for our context file:
 [contexts/tasks.context.tsx](https://github.com/fak1337/pentia_mobile_learning_tasks/blob/main/React-Native/Task4/step5_src/contexts/tasks.context.tsx)
 
 ---
-### Step 5.3 : Making our first screen file
+### Step 5.3 : Making the first screen file
+- Open the newly created view file: **overview.tsx** in the **screens** folder.
+- You task is now to c/p the right views, components, hooks, functions, styles into this file and to complete it. Your App.tsx should be pretty empty when finished with this task.
 
+Hint: Here is the skeleton for **overview.tsx**. Remember the imports at the top.
+```ts
+const Overview = () => {
+
+  // 1. Implement the new context hook and extract the right states and functions: useTasks()
+  // 2. newTask state goes here.
+
+  return (
+    // 3. Insert all views and components from App.tsx
+  )
+}
+
+const styles = StyleSheet.create({
+  // 4. Insert all styles related to the screen.
+});
+
+export default Overview;
+```
+
+Check out the finale result for our Overview screen file:
+[screens/overview.tsx](https://github.com/fak1337/pentia_mobile_learning_tasks/blob/main/React-Native/Task4/step5_src/screens/overview.tsx)
 
 ---
-### Step 5.4 : Changes to our TaskItem component
+### Step 5.4 : Changes to TaskItem component
+- In this step I want you to change the **TaskItem** component so that it calls **removeTask** function from the context directly.
+- Make the appropriate changes to components/TaskItem.tsx and screens/overview.tsx
+
+Hint: You dont need the **onPress** prop for **TaskItem** anymore.
+
+Check out the finale result for our TaskItem component:
+[components/TaskItem.tsx](https://github.com/fak1337/pentia_mobile_learning_tasks/blob/main/React-Native/Task4/step5_src/components/TaskItem.tsx)
+
+---
+### Step 5.5 : Changes to App component(The main file, App.tsx)
+Lets give you a little break and show the App.tsx file:
+```ts
+const App = () => {
+  return (
+    <TaskProvider>
+      <Overview />
+    </TaskProvider>
+  )
+}
+```
+Your App.tsx should look something like this:
+[App.tsx](https://github.com/fak1337/pentia_mobile_learning_tasks/blob/main/React-Native/Task4/step5_src/App.tsx)
