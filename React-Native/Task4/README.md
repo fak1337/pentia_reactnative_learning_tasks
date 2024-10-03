@@ -229,5 +229,9 @@ const App = () => {
   )
 }
 ```
+**Code explained:**
+Overview screen is wrapped with a TaskProvider, which provides context (for managing tasks) to the entire component tree. By doing this, any component inside TaskProvider, including Overview, can access and modify task-related data. 
+
+
 Your App.tsx should look something like this:
 [App.tsx](https://github.com/fak1337/pentia_mobile_learning_tasks/blob/main/React-Native/Task4/step5_src/App.tsx)
