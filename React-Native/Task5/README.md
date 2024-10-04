@@ -95,6 +95,9 @@ export default TaskDetails;
 **Code explained:**
 - **route.params** In React Navigation, when you navigate between screens, each screen receives a route object. This route object contains information about the parameters passed when navigating to the screen.
 
+---
+<br/>
+
 ## Step 4: Update the Overview screen
 Edit the file: **screens/overviews.tsx** and modify the **Overview** component props and **FlatList** item to navigate to the **TaskDetail** screen when a task is pressed:
 - Firstly edit the **Overview** component props from this:
@@ -108,9 +111,29 @@ const Overview = ({ navigation }) => {....}
 **Code explained:**
 - **navigation prop**: In React Navigation, when you pass navigation in the props of the Overview component, you're enabling it to interact with the navigation system. It's like a tool that gives you access to methods such as navigate(), goBack(), and others, to control navigation behavior.
 
-- Lastly edit the **Flatlist** item: **TaskItem** with a new prop: onPress. Add this:
+- Lastly edit the **Flatlist** item: **TaskItem** with a new prop: **onPress**. Add this:
 ```ts
-onPress={()=>navigation.navigate("TaskDetails", {task: item})} 
+onPressGoToDetails={()=>navigation.navigate("TaskDetails", {task: item})} 
 ```
 
+---
+<br/>
+
 ## Step 5: Update the TaskItem custom component
+You are on your own in this last step!\
+Lets edit our TaskItem custom component so it can use one more custom prop: **onPressGoToDetails**
+- Edit the file: **components/TaskItem.tsx**
+- Add the **onPressGoToDetails** prop
+- Use the **Pressable** component as the parent instead of a basic **View** component and handle the **onPressGoToDetails** prop in it.
+
+---
+<br/>
+
+Sourcecode for finale result:
+[Source](https://github.com/fak1337/pentia_mobile_learning_tasks/blob/main/React-Native/Task5/src/)
+
+
+---
+<br/>
+
+# End of task 5

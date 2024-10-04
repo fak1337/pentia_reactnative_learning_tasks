@@ -1,20 +1,20 @@
 import React from 'react';
-import { Button, StyleSheet, Text, View } from "react-native"
+import { Button, Pressable, StyleSheet, Text, View } from "react-native"
 import { useTasks } from '../contexts/tasks.context';
 
 export const TaskItem = (props) => {
 
-    const { title } = props
+    const { title, onPressGoToDetails } = props
 
     const { removeTask } = useTasks();
 
     return (
-        <View style={styles.task}>
+        <Pressable onPress={onPressGoToDetails} style={styles.task}>
             <View style={styles.taskTextContainer}>
                 <Text style={styles.taskText}>{title}</Text>
             </View>
             <Button title={"Done"} onPress={()=>removeTask(title)} />
-        </View>
+        </Pressable>
     )
 }
 

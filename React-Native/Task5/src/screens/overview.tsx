@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { Text, View, TextInput, Button, StyleSheet, SafeAreaView, FlatList } from 'react-native';
-import { TaskItem } from '../components/TaskItem';
+import { TaskItem } from './../components/TaskItem';
 import { useTasks } from '../contexts/tasks.context';
 
-const Overview = () => {
+const Overview = ({ navigation }) => {
 
     const { tasks, addTask, clearTasks } = useTasks();
     const [newTask, setNewTask] = useState<string>('');
@@ -41,7 +41,7 @@ const Overview = () => {
                     <FlatList
                         style={styles.tasksContainer}
                         data={tasks}
-                        renderItem={({ item }) => <TaskItem title={item} />}
+                        renderItem={({ item }) => <TaskItem title={item} onPressGoToDetails={()=>navigation.navigate("TaskDetails", {task: item})} />}
                     />
                 )
             }
