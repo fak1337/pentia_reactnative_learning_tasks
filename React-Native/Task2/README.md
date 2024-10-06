@@ -97,7 +97,6 @@ In the beginning we will start very simple, lets start by making the Task item.
     - Add the title prop with the string "Done"
 - C/P the whole **Task item** a couple of times
 - Wrap all the **Task items** you just made in a **ScrollView**
-- Give the ScrollView a style **flex: 1** so it fills the rest of the screen.
 
 ---
 ### Extra
