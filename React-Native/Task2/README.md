@@ -163,14 +163,23 @@ Your tasks are as follows, clean up the styling code like above for the:
 ## Step 3: Custom components
 Time to make our first custom component. Lets get into it straight away!
 
-### Step 3.1: Project structur
+### Step 3.1: Project structure
 
-Firstly lets make some changes to our project structur
+Firstly lets make some changes to our project structure
 
-- Make a new Folder in the main project folder: **components**
+- Make a new Folder in the main project folder named: **app**
+    - This is the folder that vil contain all our apps main source code.
+- Make a new Folder in the **app** folder: **components**
     - This is the folder that vil contain all the custom components
 - Make a new file in the **components** folder: **TaskItem.tsx**
     - This is the custom component file for the Task Items
+
+In the end you should have a project structure like below, keep in mind this are the source files for your project and I have not listet the overall react-native, native and other project files:
+- Project root
+  - app
+    - components
+      - TaskItem.tsx
+  - App.tsx (keep this file in the project root)
 
 ### Step 3.2: The custom component
 

@@ -96,21 +96,22 @@ In this step, we will architect the app to handle multiple screens efficiently w
 ### Step 5.1 : Project structure
 We will split step 5 into smaller parts. First, let's change the overall project structure to accommodate our new architecture.
 
-- Make new folders named **contexts** and **screens** in the main project folder
+- Make new folders named **contexts** and **screens** in the **app** folder (our main source code folder in the main project folder)
 - In the new **contexts** folder, make a new file: **tasks.context.tsx**
   - This will contain our new tasks contexts, states and functions, but for now keep it empty.
 - In the new **screens** folder, make a new file: **overview.tsx**
   - All the UI that are in App.tsx will be moved to this file, but for now keep it empty.
 
 In the end you should have a project structure like below, keep in mind this are the source files for your project and I have not listet the overall react-native, native and other project files:
-- Project
-  - components
-    - TaskItem.tsx
-  - contexts
-    - tasts.context.tsx
-  - screens
-    - overview.tsx
-  - App.tsx
+- Project root
+  - app
+    - components
+      - TaskItem.tsx
+    - contexts
+      - tasts.context.tsx
+    - screens
+      - overview.tsx
+  - App.tsx (keep this file in the project root)
 
 ---
 ### Step 5.2 : Setting up the context
